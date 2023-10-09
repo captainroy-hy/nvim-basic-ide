@@ -15,13 +15,17 @@ local settings = {
   ui = {
     border = "none",
     icons = {
-      package_installed = "◍",
-      package_pending = "◍",
-      package_uninstalled = "◍",
+        package_installed = "✓",
+        package_pending = "➜",
+        package_uninstalled = "✗"
     },
   },
-  log_level = vim.log.levels.INFO,
+  log_level = vim.log.levels.DEBUG,
   max_concurrent_installers = 4,
+  registries = {
+    "github:mason-org/mason-registry",
+    "lua:mason-registry.index"
+  },
 }
 
 function M.config()

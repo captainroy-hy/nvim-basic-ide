@@ -52,6 +52,7 @@ function M.config()
       stopOnEntry = false,
     },
   }
+
 end
 
 M = {
