@@ -6,7 +6,12 @@ local M = {
 }
 
 function M.config()
-  require("ibl").setup()
+  local opts = {
+    indent = {
+      char =  "╎"
+    }
+  }
+  require("ibl").setup(opts)
 end
 
 -- function M.config()
