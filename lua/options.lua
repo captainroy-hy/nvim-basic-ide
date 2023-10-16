@@ -1,3 +1,4 @@
+vim.opt.syntax = "on"
 vim.opt.backup = false -- creates a backup file
 vim.opt.clipboard = "unnamedplus" -- allows neovim to access the system clipboard
 vim.opt.cmdheight = 1 -- more space in the neovim command line for displaying messages
@@ -62,4 +63,3 @@ vim.g.terminal_color_12 = "#729fcf"
 vim.g.terminal_color_13 = "#ad7fa8"
 vim.g.terminal_color_14 = "#00f5e9"
 vim.g.terminal_color_15 = "#eeeeec"
-

@@ -39,6 +39,16 @@ local M = {
 }
 
 function M.config()
+  vim.g.go_highlight_types = 1
+  vim.g.go_highlight_fields = 1
+  vim.g.go_highlight_functions = 1
+  vim.g.go_highlight_function_calls = 1
+  vim.g.go_highlight_operators = 1
+  vim.g.go_highlight_function_parameters = 1
+  vim.g.go_highlight_extra_types = 1
+  vim.g.go_highlight_variable_declarations = 1
+  vim.g.go_highlight_variable_assignments = 1
+
   require("onedark").setup {
     style = "cool",
     transparent = true, -- Show/hide background
@@ -47,7 +57,7 @@ function M.config()
     cmp_itemkind_reverse = false, -- reverse item kind highlights in cmp menu
 
     -- toggle theme style ---
-    toggle_style_key = '<leader>ts', -- keybind to toggle theme style. Leave it nil to disable it, or set it to a string, for example "<leader>ts"
+    toggle_style_key = "<leader>ts", -- keybind to toggle theme style. Leave it nil to disable it, or set it to a string, for example "<leader>ts"
     toggle_style_list = { "dark", "darker", "cool", "deep", "warm", "warmer", "light" }, -- List of styles to toggle between
 
     -- Change code style ---

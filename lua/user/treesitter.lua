@@ -28,7 +28,7 @@ function M.config()
     highlight = {
       enable = true, -- false will disable the whole extension
       -- additional_vim_regex_highlighting = true,
-      disable = { "css" }, -- list of language that will be disabled
+      disable = { "css", "go", "cue" }, -- list of language that will be disabled
     },
     autopairs = {
       enable = true,

@@ -65,6 +65,7 @@ keymap("n", "<leader>b", ":Telescope buffers<CR>", opts)
 
 -- Git
 keymap("n", "<leader>gg", "<cmd>lua _LAZYGIT_TOGGLE()<CR>", opts)
+keymap("n", "<leader>gb", ":ToggleBlame <CR>", opts)
 
 -- Comment
 keymap("n", "<leader>c<Space>", "<cmd>lua require('Comment.api').toggle.linewise.current()<CR>", opts)
@@ -104,3 +105,6 @@ keymap("n", "<A-k>", ":-8 <CR>==zz", opts)
 -- modify window size
 keymap("n", "<Leader>=", ":vert res +15<CR>", opts)
 keymap("n", "<Leader>-", ":vert res -15<CR>", opts)
+
+
+keymap("n", "<Leader>w", ":wa<CR>", opts)
