@@ -1,0 +1,12 @@
+-- return {
+--   "ThePrimeagen/harpoon",
+--   lazy = true,
+--   cmd = "Telescope harpoon marks",
+--   dependencies = {
+--     "nvim-lua/plenary.nvim",
+--   },
+--   config = function()
+--     require("harpoon").setup {}
+--     require("telescope").load_extension "harpoon"
+--   end,
+-- }
