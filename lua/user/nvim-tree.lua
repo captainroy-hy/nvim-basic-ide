@@ -1,6 +1,6 @@
 local M = {
   "kyazdani42/nvim-tree.lua",
-  commit = "f5d970d4506f385b29534252d8c15a782fa53034",
+  commit = "40b9b887d090d5da89a84689b4ca0304a9649f62",
   event = "VimEnter",
 }
 
@@ -87,6 +87,7 @@ function M.config()
       update_cwd = true,
     },
     renderer = {
+      highlight_clipboard = "name",
       icons = {
         -- git_placement = "signcolumn",
         -- diagnostics_placement = "before",
