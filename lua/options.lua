@@ -65,5 +65,6 @@ vim.g.terminal_color_14 = "#00f5e9"
 vim.g.terminal_color_15 = "#eeeeec"
 
   -- disable netrw at the very start of your init.lua
-  vim.g.loaded_netrw = 1
-  vim.g.loaded_netrwPlugin = 1
+vim.g.loaded_netrw = 1
+vim.g.loaded_netrwPlugin = 1
+
