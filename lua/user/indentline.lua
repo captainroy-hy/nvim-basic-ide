@@ -8,7 +8,10 @@ local M = {
 function M.config()
   local opts = {
     indent = {
-      char =  "╎"
+      char = "╎"
+    },
+    scope = {
+      enabled = false,
     }
   }
   require("ibl").setup(opts)
