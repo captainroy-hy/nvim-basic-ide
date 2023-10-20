@@ -11,7 +11,7 @@ function M.config()
       char = "╎"
     },
     scope = {
-      enabled = false,
+      enabled = true,
     }
   }
   require("ibl").setup(opts)

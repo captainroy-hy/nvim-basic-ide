@@ -24,6 +24,7 @@ require("lazy").setup("user", {
   performance = {
     rtp = {
       disabled_plugins = {
+        "nvim-pqf",
         -- "yanky",
         -- "gzip", -- Plugin for editing compressed files.
         -- "matchit", -- What is it?
