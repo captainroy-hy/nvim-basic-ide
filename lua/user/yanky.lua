@@ -1,10 +1,12 @@
+-- 和 osc52 不兼容，暂时先不用
+-- https://github.com/gbprod/yanky.nvim/issues/113
 return {
   -- better yank/paste
   {
     "gbprod/yanky.nvim",
     -- event = "BufEnter",
     config = function()
-      vim.keymap.set({ "n", "x" }, "p", "<Plug>(YankyPutAfter)")
+      vim.keymap.set({ "n", "x" }, "p" , "<Plug>(YankyPutAfter)")
       vim.keymap.set({ "n", "x" }, "P", "<Plug>(YankyPutBefore)")
       vim.keymap.set({ "n", "x" }, "gp", "<Plug>(YankyGPutAfter)")
       vim.keymap.set({ "n", "x" }, "gP", "<Plug>(YankyGPutBefore)")
