@@ -13,10 +13,10 @@ return {
         ["@n"] = " ", -- mark annotation startswith @n ,signs this icon as `Note`
       },
       signs = {
-        -- add = { hl = "BookMarksAdd", text = '🦑', numhl = "BookMarksAddNr", linehl = "BookMarksAddLn" },
-        -- ann = { hl = "BookMarksAnn", text = '🐳', numhl = "BookMarksAnnNr", linehl = "BookMarksAnnLn" },
-        add = { hl = "BufferAlternate", text = "", numhl = "BookMarksAddNr", linehl = "BookMarksAddLn" },
-        ann = { hl = "BookMarksAnn", text = "󰆉", numhl = "BookMarksAnnNr", linehl = "BookMarksAnnLn" },
+        add = { hl = "BookMarksAdd", text = '🦑', numhl = "BookMarksAddNr", linehl = "BookMarksAddLn" },
+        ann = { hl = "BookMarksAnn", text = '🐳', numhl = "BookMarksAnnNr", linehl = "BookMarksAnnLn" },
+        -- add = { hl = "BufferAlternate", text = "", numhl = "BookMarksAddNr", linehl = "BookMarksAddLn" },
+        -- ann = { hl = "BookMarksAnn", text = "󰆉", numhl = "BookMarksAnnNr", linehl = "BookMarksAnnLn" },
       },
       on_attach = function(bufnr)
         local bm = require "bookmarks"

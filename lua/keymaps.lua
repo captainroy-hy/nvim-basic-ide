@@ -109,3 +109,4 @@ keymap("n", "<Leader>-", ":vert res -15<CR>", opts)
 
 
 keymap("n", "<Leader>w", ":wa<CR>", opts)
+keymap("n", "<Leader>q", ":qa<CR>", opts)
