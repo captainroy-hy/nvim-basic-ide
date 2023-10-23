@@ -52,20 +52,17 @@ vim.api.nvim_create_autocmd({ "BufWinEnter" }, {
   end,
 })
 
--- vim.api.nvim_create_autocmd({ "BufEnter" }, {
---   pattern = { "*.go"},
---   callback = function()
---     print("set struct-go")
---     vim.cmd "nnoremap <Leader>o :lua require'structrue-go'.toggle()<CR>"
---     -- vim.keymap.set("n", "<leader>o", ":lua require'structrue-go'.toggle()<CR>", {silent = true})
---   end,
--- })
---
--- vim.api.nvim_create_autocmd({ "BufLeave" }, {
---   pattern = { "*.go"},
---   callback = function()
---     -- vim.keymap.set('n', '<leader>o', ":SymbolsOutline<CR>", {silent = true})
---     print("set SymbolsOutline")
---     vim.cmd "nnoremap <Leader>o :SymbolsOutline<CR>"
---   end,
--- })
+vim.api.nvim_create_autocmd({ 'InsertLeave' }, {
+  pattern = '*.*',
+  callback = function()
+    vim.cmd 'doautocmd User format'
+    vim.cmd 'update'
+  end,
+})
+
+vim.api.nvim_create_autocmd({ 'TextChanged' }, {
+  pattern = '*.*',
+  callback = function()
+    vim.cmd 'update'
+  end,
+})

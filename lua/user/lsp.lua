@@ -21,7 +21,7 @@ function M.config()
   local function lsp_keymaps(bufnr)
     local opts = { noremap = true, silent = true }
     local keymap = vim.api.nvim_buf_set_keymap
-    keymap(bufnr,"", "<Comma>", "<Nop>", opts)
+    keymap(bufnr, "", "<Comma>", "<Nop>", opts)
     vim.g.mapleader = ","
     keymap(bufnr, "n", "gD", "<cmd>lua vim.lsp.buf.declaration()<CR>", opts)
     keymap(bufnr, "n", "gd", "<cmd>lua vim.lsp.buf.definition()<CR>", opts)
@@ -43,6 +43,14 @@ function M.config()
   local on_attach = function(client, bufnr)
     lsp_keymaps(bufnr)
     require("illuminate").on_attach(client)
+
+    -- auto format
+    vim.api.nvim_create_autocmd({ 'User' }, {
+      pattern = 'format',
+      callback = function()
+        vim.cmd 'lua vim.lsp.buf.format()'
+      end,
+    })
   end
 
   for _, server in pairs(require("utils").servers) do
