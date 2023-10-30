@@ -87,6 +87,7 @@ function M.config()
       update_cwd = true,
     },
     renderer = {
+    group_empty = true,
       highlight_clipboard = "name",
       icons = {
         -- git_placement = "signcolumn",
