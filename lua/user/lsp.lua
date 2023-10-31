@@ -1,6 +1,6 @@
 local M = {
   "neovim/nvim-lspconfig",
-  commit = "649137cbc53a044bffde36294ce3160cb18f32c7",
+  -- commit = "649137cbc53a044bffde36294ce3160cb18f32c7",
   lazy = false,
   event = { "BufReadPre" },
   dependencies = {
@@ -40,6 +40,7 @@ function M.config()
   end
 
   local lspconfig = require "lspconfig"
+
   local on_attach = function(client, bufnr)
     lsp_keymaps(bufnr)
     require("illuminate").on_attach(client)

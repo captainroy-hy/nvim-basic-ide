@@ -42,30 +42,29 @@ vim.opt.shortmess:append "c"                    -- hide all the completion messa
 vim.opt.whichwrap:append "<,>,[,],h,l"          -- keys allowed to move to the previous/next line when the beginning/end of line is reached
 vim.opt.iskeyword:append "-"                    -- treats words with `-` as single words
 vim.opt.formatoptions:remove { "c", "r", "o" }  -- This is a sequence of letters which describes how automatic formatting is to be done
-vim.opt.linebreak           = true
+vim.opt.linebreak        = true
 
-vim.opt.foldmethod          = "expr"
-vim.opt.foldexpr            = "nvim_treesitter#foldexpr()" -- use nvim-treesitter for fold method
-vim.opt.foldlevel           = 99                           -- Make all folds open when enter a file.
+vim.opt.foldmethod       = "expr"
+vim.opt.foldexpr         = "nvim_treesitter#foldexpr()" -- use nvim-treesitter for fold method
+vim.opt.foldlevel        = 99                           -- Make all folds open when enter a file.
 
-vim.g.terminal_color_0      = "#282a36"
-vim.g.terminal_color_1      = "#ff5555"
-vim.g.terminal_color_2      = "#50fa7b"
-vim.g.terminal_color_3      = "#f1fa8c"
-vim.g.terminal_color_4      = "#bd93f9"
-vim.g.terminal_color_5      = "#f8f8f2"
-vim.g.terminal_color_6      = "#8be9fd"
-vim.g.terminal_color_7      = "#d3d7cf"
-vim.g.terminal_color_8      = "#555753"
-vim.g.terminal_color_9      = "#ef2929"
-vim.g.terminal_color_10     = "#8ae234"
-vim.g.terminal_color_11     = "#fce94f"
-vim.g.terminal_color_12     = "#729fcf"
-vim.g.terminal_color_13     = "#ad7fa8"
-vim.g.terminal_color_14     = "#00f5e9"
-vim.g.terminal_color_15     = "#eeeeec"
+vim.g.terminal_color_0   = "#282a36"
+vim.g.terminal_color_1   = "#ff5555"
+vim.g.terminal_color_2   = "#50fa7b"
+vim.g.terminal_color_3   = "#f1fa8c"
+vim.g.terminal_color_4   = "#bd93f9"
+vim.g.terminal_color_5   = "#f8f8f2"
+vim.g.terminal_color_6   = "#8be9fd"
+vim.g.terminal_color_7   = "#d3d7cf"
+vim.g.terminal_color_8   = "#555753"
+vim.g.terminal_color_9   = "#ef2929"
+vim.g.terminal_color_10  = "#8ae234"
+vim.g.terminal_color_11  = "#fce94f"
+vim.g.terminal_color_12  = "#729fcf"
+vim.g.terminal_color_13  = "#ad7fa8"
+vim.g.terminal_color_14  = "#00f5e9"
+vim.g.terminal_color_15  = "#eeeeec"
 
 -- disable netrw at the very start of your init.lua
-vim.g.loaded_netrw          = 1
-vim.g.loaded_netrwPlugin    = 1
-
+vim.g.loaded_netrw       = 1
+vim.g.loaded_netrwPlugin = 1

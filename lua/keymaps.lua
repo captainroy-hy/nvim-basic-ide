@@ -85,8 +85,8 @@ keymap("n", "<leader>dx", "<cmd>lua require'dap'.terminate()<cr>", opts)
 
 -- Lsp
 keymap("n", "<leader>lf", "<cmd>lua vim.lsp.buf.format{ async = true }<cr>", opts)
-keymap("n", "[d", "<cmd>lua vim.diagnostic.goto_next({buffer=0})<cr>", opts)
-keymap("n", "]d", "<cmd>lua vim.diagnostic.goto_prev({buffer=0})<cr>", opts)
+keymap("n", "]d", "<cmd>lua vim.diagnostic.goto_next({buffer=0})<cr>", opts)
+keymap("n", "[d", "<cmd>lua vim.diagnostic.goto_prev({buffer=0})<cr>", opts)
 
 -- Symbols-outline
 keymap("n", "<leader>o", ":SymbolsOutline<cr>", opts)
