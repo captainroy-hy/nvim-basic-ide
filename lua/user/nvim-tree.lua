@@ -1,6 +1,7 @@
 local M = {
   "kyazdani42/nvim-tree.lua",
-  commit = "40b9b887d090d5da89a84689b4ca0304a9649f62",
+  -- commit = "2248ef254d0a1488a72041cfb45ca9caada6d994",
+  -- commit = "40b9b887d090d5da89a84689b4ca0304a9649f62",
   event = "VimEnter",
 }
 
@@ -82,13 +83,18 @@ function M.config()
   -- local tree_cb = require("nvim-tree.config").nvim_tree_callback
   require("nvim-tree").setup {
     on_attach = on_attach,
+    modified = {
+      enable = true,
+      show_on_dirs = true,
+    },
     update_focused_file = {
       enable = true,
       update_cwd = true,
     },
     renderer = {
-    group_empty = true,
+      group_empty = true,
       highlight_clipboard = "name",
+      highlight_git = true,
       icons = {
         -- git_placement = "signcolumn",
         -- diagnostics_placement = "before",

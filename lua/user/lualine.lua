@@ -115,6 +115,7 @@ function M.config()
     return ""
   end
 
+
   lualine.setup {
     options = {
       globalstatus = true,
@@ -135,8 +136,7 @@ function M.config()
         }
       },
       lualine_c = { searchcount },
-
-      lualine_x = { diff, "mode", "encoding", filetype },
+      lualine_x = { filetype },
       lualine_y = { location },
       lualine_z = { "progress" },
     },
