@@ -46,7 +46,6 @@ return {
                 return escaped
               end
               local root, _ = require("project_nvim.project").get_project_root()
-              -- fname = fname:gsub('^' .. vim.env.HOME, '~')
               fname = fname:gsub(escape_pattern(root .. "/"), '')
             end
             -- char in fname may occur more than 1 width, ignore this issue in order to keep performance
@@ -109,7 +108,11 @@ return {
           action_for = {
             ["ctrl-s"] = "split",
             ["ctrl-t"] = "tab drop",
-            ["ctrl-q"] = "signtoggle",
+            -- ["ctrl-q"] = "signtoggle",
+            ['ctrl-q'] = {
+              description = [[Press ctrl-q to toggle sign for the selected items]],
+              default = 'signtoggle'
+            },
           },
           -- extra_opts = { "--bind", "ctrl-o:toggle-all", "--prompt", "> " },
           extra_opts = { '--bind', 'ctrl-o:toggle-all', '--delimiter', '│' }

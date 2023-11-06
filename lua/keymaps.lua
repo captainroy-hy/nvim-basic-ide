@@ -91,7 +91,7 @@ keymap("n", "[d", "<cmd>lua vim.diagnostic.goto_prev({buffer=0})<cr>", opts)
 -- Symbols-outline
 keymap("n", "<leader>o", ":SymbolsOutline<cr>", opts)
 
--- quickfix window 
+-- quickfix window
 keymap("n", "<C-n>", ":cn<CR>", opts)
 keymap("n", "<C-m>", ":cp<CR>", opts)
 keymap("n", "<C-x>", ":ccl<CR>", opts)
@@ -110,3 +110,7 @@ keymap("n", "<Leader>-", ":vert res -15<CR>", opts)
 
 keymap("n", "<Leader>w", ":wa<CR>", opts)
 keymap("n", "<Leader>q", ":qa<CR>", opts)
+
+-- do not copy to clipboard if doing a change command
+keymap("v", "c", '"_c', opts)
+keymap("n", "c", '"_c', opts)

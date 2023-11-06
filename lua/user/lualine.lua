@@ -14,14 +14,14 @@ function M.config()
     return vim.fn.winwidth(0) > 80
   end
 
-  local diagnostics = {
-    "diagnostics",
-    sources = { "nvim_lsp" },
-    sections = { "error", "warn" },
-    symbols = { error = " ", warn = " " },
-    colored = false,
-    always_visible = true,
-  }
+  -- local diagnostics = {
+  --   "diagnostics",
+  --   sources = { "nvim_lsp" },
+  --   sections = { "error", "warn" },
+  --   symbols = { error = " ", warn = " " },
+  --   colored = false,
+  --   always_visible = true,
+  -- }
 
   local diff = {
     "diff",
@@ -68,8 +68,51 @@ function M.config()
     timeout = 500,
   }
 
-  local spaces = function()
-    return "spaces: " .. vim.api.nvim_buf_get_option(0, "shiftwidth")
+  local function is_go_file()
+    local win_id = vim.api.nvim_get_current_win()
+    local buf_id = vim.api.nvim_win_get_buf(win_id)
+    local ft = vim.api.nvim_buf_get_option(buf_id, "filetype")
+    return ft == "go"
+  end
+
+
+  local function show_hover_info()
+    if not is_go_file() then
+      return ""
+    end
+
+    local params = vim.lsp.util.make_position_params()
+    local results_lsp, err = vim.lsp.buf_request_sync(0, "textDocument/hover", params, 1000)
+    if not results_lsp or vim.tbl_isempty(results_lsp) then
+      return
+    end
+
+    local function remove_prefix_and_suffix(str)
+      local without_prefix = string.gsub(str, "^```go\n", "")
+      local without_prefix_and_suffix = string.gsub(without_prefix, "\n.*$", "")
+      return without_prefix_and_suffix
+    end
+
+    local hover_info = ""
+    for _, lsp_data in pairs(results_lsp) do
+      local result = lsp_data.result
+      if result and result.contents then
+        if type(result.contents) == "table" then
+          if result.contents.value then
+            hover_info = result.contents.value
+          else
+            hover_info = table.concat(result.contents, "\n")
+          end
+        else
+          hover_info = result.contents
+        end
+      end
+    end
+
+    if hover_info ~= "" then
+      return remove_prefix_and_suffix(hover_info)
+    end
+    return ""
   end
 
   lualine.setup {
@@ -77,17 +120,23 @@ function M.config()
       globalstatus = true,
       icons_enabled = true,
       theme = "auto",
-      component_separators = { left = "", right = "" },
+      component_separators = { left = "|", right = "|" },
       section_separators = { left = "", right = "" },
       disabled_filetypes = { "alpha", "dashboard" },
       always_divide_middle = true,
     },
     sections = {
-      lualine_a = { "mode" },
-      lualine_b = { "branch", searchcount },
-      lualine_c = { filename },
+      lualine_a = { "branch", filename },
+      lualine_b = {
+        {
+          show_hover_info,
+          color = 'Function',
+          condition = is_go_file,
+        }
+      },
+      lualine_c = { searchcount },
 
-      lualine_x = { diff, spaces, "encoding", filetype },
+      lualine_x = { diff, "mode", "encoding", filetype },
       lualine_y = { location },
       lualine_z = { "progress" },
     },

@@ -79,7 +79,7 @@ function M.config()
     -- Custom Highlights --
     colors = {}, -- Override default colors
     highlights = {
-      ["LspReferenceText"] = { bg = '#59abee', fg ='#FFFFFF' },
+      ["LspReferenceText"] = { bg = '#59abee', fg = '#FFFFFF' },
       ["TreesitterContext"] = { bg = '#434c65' },
       -- CursorLine = { cterm="underline", guibg="#7d3343" }
     }, -- Override highlight groups

@@ -2,8 +2,8 @@ vim.api.nvim_create_autocmd({ "FileType" }, {
   pattern = { "qf", "help", "man", "lspinfo", "spectre_panel" },
   callback = function()
     vim.cmd [[
-      nnoremap <silent> <buffer> q :close<CR> 
-      set nobuflisted 
+      nnoremap <silent> <buffer> q :close<CR>
+      set nobuflisted
     ]]
   end,
 })
@@ -66,3 +66,46 @@ vim.api.nvim_create_autocmd({ 'TextChanged' }, {
     vim.cmd 'update'
   end,
 })
+
+-- local function show_hover_info()
+--   local params = vim.lsp.util.make_position_params()
+--   local results_lsp, err = vim.lsp.buf_request_sync(0, "textDocument/hover", params, 1000)
+--   if not results_lsp or vim.tbl_isempty(results_lsp) then
+--     return
+--   end
+--
+--   local function remove_prefix_and_suffix(str)
+--     local without_prefix = string.gsub(str, "^```go\n", "")
+--     local without_prefix_and_suffix = string.gsub(without_prefix, "\n```.*$", "")
+--     return without_prefix_and_suffix
+--   end
+--
+--   local hover_info = ""
+--   for _, lsp_data in pairs(results_lsp) do
+--     local result = lsp_data.result
+--     vim.print(result)
+--     if result and result.contents then
+--       if type(result.contents) == "table" then
+--         if result.contents.value then
+--           hover_info = result.contents.value
+--         else
+--           hover_info = table.concat(result.contents, "\n")
+--         end
+--       else
+--         hover_info = result.contents
+--       end
+--     end
+--   end
+--
+--   if hover_info ~= "" then
+--     -- vim.print(remove_prefix_and_suffix(hover_info))
+--     print(remove_prefix_and_suffix(hover_info))
+--   end
+-- end
+--
+-- vim.api.nvim_create_autocmd({ 'CursorHold' }, {
+--   pattern = '*.go',
+--   callback = function()
+--     show_hover_info()
+--   end,
+-- })
