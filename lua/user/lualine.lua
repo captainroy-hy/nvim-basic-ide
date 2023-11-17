@@ -82,7 +82,7 @@ function M.config()
     end
 
     local params = vim.lsp.util.make_position_params()
-    local results_lsp, err = vim.lsp.buf_request_sync(0, "textDocument/hover", params, 1000)
+    local results_lsp, err = vim.lsp.buf_request_sync(0, "textDocument/hover", params)
     if not results_lsp or vim.tbl_isempty(results_lsp) then
       return
     end
@@ -128,13 +128,13 @@ function M.config()
     },
     sections = {
       lualine_a = { "branch", filename },
-      lualine_b = {
-        {
-          show_hover_info,
-          color = 'Function',
-          condition = is_go_file,
-        }
-      },
+      -- lualine_b = {
+      --   {
+      --     show_hover_info,
+      --     color = 'Function',
+      --     condition = is_go_file,
+      --   }
+      -- },
       lualine_c = { searchcount },
       lualine_x = { filetype },
       lualine_y = { location },

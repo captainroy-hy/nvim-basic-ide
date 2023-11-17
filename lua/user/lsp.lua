@@ -47,7 +47,8 @@ function M.config()
 
     -- auto format
     vim.api.nvim_create_autocmd({ 'User' }, {
-      pattern = 'format',
+      -- pattern = 'format',
+      pattern = '*.go',
       callback = function()
         vim.cmd 'lua vim.lsp.buf.format()'
       end,

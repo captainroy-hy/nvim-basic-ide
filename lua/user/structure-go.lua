@@ -8,9 +8,9 @@ local M = {
 
 function M.config()
   require("structrue-go").setup {
-    show_others_method = true,   -- bool show methods of struct whose not in current file
-    show_filename = false,        -- bool
-    number = "no",               -- show number: no | nu | rnu
+    show_others_method = true, -- bool show methods of struct whose not in current file
+    show_filename = false,     -- bool
+    number = "no",             -- show number: no | nu | rnu
     fold_open_icon = " ",
     fold_close_icon = " ",
     cursor_symbol_hl = "guibg=Gray guifg=White", -- symbol hl under cursor,
@@ -67,16 +67,16 @@ function M.config()
       },
     },
     keymap = {
-      toggle = "<Space>m",              -- toggle structure-go window
-      show_others_method_toggle = "H",   -- show or hidden the methods of struct whose not in current file
-      symbol_jump = "<CR>",              -- jump to then symbol file under cursor
-      center_symbol = "\\f",             -- Center the highlighted symbol
+      toggle = "<Space>m",             -- toggle structure-go window
+      show_others_method_toggle = "H", -- show or hidden the methods of struct whose not in current file
+      symbol_jump = "<CR>",            -- jump to then symbol file under cursor
+      center_symbol = "\\f",           -- Center the highlighted symbol
       fold_toggle = "z",
-      refresh = "R",                     -- refresh symbols
-      preview_open = "P",                -- preview  symbol context open
-      preview_close = "\\p",             -- preview  symbol context close
+      refresh = "R",                   -- refresh symbols
+      preview_open = "P",              -- preview  symbol context open
+      preview_close = "\\p",           -- preview  symbol context close
     },
-    fold = {                             -- fold symbols
+    fold = {                           -- fold symbols
       import = true,
       const = false,
       variable = false,

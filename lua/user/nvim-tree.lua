@@ -134,7 +134,7 @@ function M.config()
       },
     },
     view = {
-      width = 35,
+      width = 50,
       side = "left",
       signcolumn = "yes",
     },

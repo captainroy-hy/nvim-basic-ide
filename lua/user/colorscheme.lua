@@ -81,7 +81,9 @@ function M.config()
     highlights = {
       ["LspReferenceText"] = { bg = '#59abee', fg = '#FFFFFF' },
       ["TreesitterContext"] = { bg = '#434c65' },
-      -- CursorLine = { cterm="underline", guibg="#7d3343" }
+      IlluminatedWordText = { bg = '#59abee', fg = '#FFFFFF' },
+      IlluminatedWordRead = { bg = '#59abee', fg = '#FFFFFF' },
+      IlluminatedWordWrite = { bg = '#59abee', fg = '#FFFFFF' },
     }, -- Override highlight groups
 
     -- Plugins Config --
