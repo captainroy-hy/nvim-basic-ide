@@ -14,7 +14,7 @@ local actions = require "telescope.actions"
 
 M.opts = {
   defaults = {
-    layout_config = { height = 0.99, width = 0.99, preview_width = 0.7 },
+    layout_config = { height = 0.99, width = 0.99, preview_width = 0.6 },
     prompt_prefix = " ",
     selection_caret = " ",
     path_display = { "smart" },
@@ -27,6 +27,16 @@ M.opts = {
         ["<C-k>"] = actions.move_selection_previous,
       },
     },
+    vimgrep_arguments = {
+      "ag",
+      "--nocolor",
+      "--noheading",
+      "--numbers",
+      "--column",
+      "--smart-case",
+      "--silent",
+      "--vimgrep",
+    }
   },
 }
 

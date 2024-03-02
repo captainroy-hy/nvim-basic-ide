@@ -138,6 +138,9 @@ function M.config()
       side = "left",
       signcolumn = "yes",
     },
+    filters = {
+      git_ignored = false,
+    }
   }
 end
 
