@@ -60,6 +60,7 @@ keymap("n", "tt", ":NvimTreeToggle<CR>", opts)
 -- Telescope
 keymap("n", "<leader>f", ":Telescope find_files<CR>", opts)
 keymap("n", "<leader>F", ":Telescope live_grep<CR>", opts)
+-- keymap("n", "<leader>F", "<cmd>lua require('telescope.builtin').live_grep({additional_args = {'--hidden'}})<cr>", opts)
 keymap("n", "<leader>p", ":Telescope projects<CR>", opts)
 keymap("n", "<leader>b", ":Telescope buffers<CR>", opts)
 keymap("n", "<leader>y", ":Telescope yank_history<CR>", opts)
