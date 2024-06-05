@@ -59,7 +59,8 @@ keymap("n", "tt", ":NvimTreeToggle<CR>", opts)
 
 -- Telescope
 keymap("n", "<leader>f", ":Telescope find_files<CR>", opts)
-keymap("n", "<leader>F", ":Telescope live_grep<CR>", opts)
+-- keymap("n", "<leader>F", ":Telescope live_grep<CR>", opts)
+keymap("n", "<leader>F", ":lua require('telescope').extensions.live_grep_args.live_grep_args()<CR>")
 -- keymap("n", "<leader>F", "<cmd>lua require('telescope.builtin').live_grep({additional_args = {'--hidden'}})<cr>", opts)
 keymap("n", "<leader>p", ":Telescope projects<CR>", opts)
 keymap("n", "<leader>b", ":Telescope buffers<CR>", opts)
@@ -115,3 +116,4 @@ keymap("n", "<Leader>q", ":qa<CR>", opts)
 -- do not copy to clipboard if doing a change command
 keymap("v", "c", '"_c', opts)
 keymap("n", "c", '"_c', opts)
+
