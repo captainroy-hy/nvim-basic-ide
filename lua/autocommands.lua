@@ -43,20 +43,37 @@ vim.api.nvim_create_autocmd({ "VimEnter" }, {
   end,
 })
 
-vim.api.nvim_create_autocmd({ "BufWinEnter" }, {
-  callback = function()
-    local line_count = vim.api.nvim_buf_line_count(0)
-    if line_count >= 5000 then
-      vim.cmd "IlluminatePauseBuf"
-    end
-  end,
-})
+-- vim.api.nvim_create_autocmd({ "BufWinEnter" }, {
+--   callback = function()
+--     local line_count = vim.api.nvim_buf_line_count(0)
+--     if line_count >= 5000 then
+--       vim.cmd "IlluminatePauseBuf"
+--     end
+--   end,
+-- })
 
 vim.api.nvim_create_autocmd({ 'InsertLeave' }, {
   pattern = '*.*',
   callback = function()
     vim.cmd 'doautocmd User format'
     vim.cmd 'update'
+  end,
+})
+
+vim.api.nvim_create_autocmd({ 'InsertLeave' }, {
+  pattern = '*.cue',
+  callback = function()
+    local bufname = vim.api.nvim_buf_get_name(0)
+    vim.api.nvim_command('update')
+    local output = vim.fn.system('cue fmt ' .. bufname)
+    -- 打印输出
+    if output ~= '' then
+      print(output)
+    end
+    vim.api.nvim_command('checktime')
+    if vim.api.nvim_buf_get_option(0, 'modified') then
+      print('File was changed by an external command!')
+    end
   end,
 })
 
