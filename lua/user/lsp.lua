@@ -1,6 +1,6 @@
 local M = {
   "neovim/nvim-lspconfig",
-  -- commit = "649137cbc53a044bffde36294ce3160cb18f32c7",
+  commit = "541f3a2781de481bb84883889e4d9f0904250a56",
   lazy = false,
   event = { "BufReadPre" },
   dependencies = {
@@ -25,7 +25,7 @@ function M.config()
     vim.g.mapleader = ","
     keymap(bufnr, "n", "gD", "<cmd>lua vim.lsp.buf.declaration()<CR>", opts)
     keymap(bufnr, "n", "gd", "<cmd>lua vim.lsp.buf.definition()<CR>", opts)
-    keymap(bufnr, "n", "K", "<cmd>lua vim.lsp.buf.hover()<CR>", opts)
+    keymap(bufnr, "n", "I", "<cmd>lua vim.lsp.buf.hover()<CR>", opts)
     keymap(bufnr, "n", "gi", "<cmd>lua vim.lsp.buf.implementation()<CR>", opts)
     keymap(bufnr, "n", "gr", "<cmd>lua vim.lsp.buf.references()<CR>", opts)
     keymap(bufnr, "n", "gl", "<cmd>lua vim.diagnostic.open_float()<CR>", opts)

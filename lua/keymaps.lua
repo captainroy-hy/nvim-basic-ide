@@ -101,8 +101,8 @@ keymap("n", "<Space><C-x>", ":copen<CR>", opts)
 
 -- move
 -- quick jump 8 lines
-keymap("n", "<A-j>", ":+8 <CR>==zz", opts)
-keymap("n", "<A-k>", ":-8 <CR>==zz", opts)
+keymap("n", "<S-j>", ":+8 <CR>==zz", opts)
+keymap("n", "<S-k>", ":-8 <CR>==zz", opts)
 
 
 -- modify window size

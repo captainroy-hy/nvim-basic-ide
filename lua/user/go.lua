@@ -23,3 +23,11 @@ vim.api.nvim_create_autocmd("BufWritePre", {
 })
 
 return M
+
+-- GoAddTag -transform camelcase
+-- snakecase: "BaseDomain" -> "base_domain"
+-- camelcase: "BaseDomain" -> "baseDomain"
+-- lispcase: "BaseDomain" -> "base-domain"
+-- pascalcase: "BaseDomain" -> "BaseDomain"
+-- titlecase: "BaseDomain" -> "Base Domain"
+-- keep: keeps the original field name

@@ -13,7 +13,7 @@ function M.config()
   toggleterm.setup {
     size = 20,
     -- open_mapping = [[<c-\>]],
-    open_mapping = [[<F10>]],
+    open_mapping = [[<c-t>]],
     hide_numbers = true,
     shade_terminals = true,
     shading_factor = 2,
